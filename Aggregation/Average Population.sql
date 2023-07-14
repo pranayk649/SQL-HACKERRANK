@@ -1,0 +1,13 @@
+Solution-1: Using ROUND & AVG Function
+
+
+SELECT ROUND(AVG(POPULATION), 0)
+FROM CITY;
+
+
+
+Solution-2: Using FLOOR & AVG Function
+
+  
+SELECT FLOOR(AVG(POPULATION))
+FROM CITY;
