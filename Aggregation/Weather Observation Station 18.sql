@@ -1,0 +1,15 @@
+Solution-1: Using MIN, MAX & ABS Function
+
+SELECT ROUND(ABS(MIN(LAT_N) - MAX(LAT_N)) + ABS(MIN(LONG_W) - MAX(LONG_W)), 4)
+FROM STATION;
+
+
+
+Solution-2: Using SET, MIN, MAX & ABS Function
+
+SET @a := (SELECT MIN(LAT_N) FROM STATION);
+SET @b := (SELECT MIN(LONG_W) FROM STATION);
+SET @c := (SELECT MAX(LAT_N) FROM STATION);
+SET @d := (SELECT MAX(LONG_W) FROM STATION);
+
+SELECT ROUND(ABS(@a - @c) + ABS(@b - @d), 4);
